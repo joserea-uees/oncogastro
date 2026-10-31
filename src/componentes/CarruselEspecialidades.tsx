@@ -2,6 +2,7 @@ import {useEffect, useRef, useState} from 'react';
 import {Activity, ArrowDown, ArrowUpRight, HeartPulse, ScanLine, Scissors} from 'lucide-react';
 import {services as especialidades} from '../data/services';
 import './CarruselEspecialidades.css';
+import {desplazarAEspecialidad} from '../utilidades/navegacionEspecialidades';
 
 const iconos = [Activity, HeartPulse, Scissors, ScanLine];
 const limitar = (valor:number, minimo:number, maximo:number) => Math.min(maximo, Math.max(minimo, valor));
@@ -44,19 +45,10 @@ export default function CarruselEspecialidades({alSeleccionar}:{alSeleccionar:(i
     };
   }, []);
 
-  function irAEspecialidad(indice:number) {
-    const contenedor = referencia.current;
-    const panel = pantalla.current;
-    if (!contenedor || !panel) return;
-    const alturaCabecera = document.querySelector('header')?.getBoundingClientRect().height ?? 0;
-    const inicio = window.scrollY + contenedor.getBoundingClientRect().top - alturaCabecera;
-    const distancia = contenedor.offsetHeight - panel.offsetHeight;
-    const destino = 0.08 + limitar(indice, 0, total - 1) / (total - 1) * 0.84;
-    window.scrollTo({top:inicio + destino * distancia, behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
-  }
+  function irAEspecialidad(indice:number) { desplazarAEspecialidad(indice, total); }
 
   return (
-    <div ref={referencia} className="recorrido-especialidades">
+    <div ref={referencia} id="recorrido-especialidades" className="recorrido-especialidades">
       <div ref={pantalla} className="carrusel-especialidades" role="region" aria-roledescription="carrusel" aria-label="Especialidades médicas, avanza desplazándote por la página"
         onKeyDown={evento => {
           if (evento.key === 'ArrowRight' || evento.key === 'ArrowLeft') {

@@ -1,0 +1,29 @@
+header.navegacion-flotante{position:fixed;inset:0 0 auto;z-index:40;height:0;padding:0;border:0;background:none;backdrop-filter:none;pointer-events:none}
+.navegacion-controles{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:24px 4%;gap:20px;color:#fffdf3}
+.navegacion-simbolo{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border:1px solid #fff5;border-radius:50%;background:#193e4310;pointer-events:auto;transition:background .3s,border-color .3s,box-shadow .3s}
+.navegacion-simbolo .logo-symbol{grid-template-columns:repeat(2,12px);gap:3px}.navegacion-simbolo .logo-symbol i{width:12px;height:14px;background:#fffdf3;transition:background .3s}
+.navegacion-derecha{display:flex;align-items:center;gap:10px;pointer-events:auto}
+.navegacion-cita,.navegacion-menu{display:flex;align-items:center;justify-content:center;gap:21px;font-size:11px;font-weight:500;padding:15px 21px;min-height:48px;border:1px solid #fff5;border-radius:4px;color:inherit;background:#193e4318;transition:background .25s,border-color .25s,color .25s,box-shadow .25s;backdrop-filter:blur(10px)}
+.navegacion-menu{gap:15px}.navegacion-cita:hover,.navegacion-menu:hover,.navegacion-simbolo:hover{background:#ffffff24;border-color:#fff9}
+.navegacion-desplazada .navegacion-controles{color:#193e43}.navegacion-desplazada .navegacion-cita,.navegacion-desplazada .navegacion-menu,.navegacion-desplazada .navegacion-simbolo{background:#fcfcf9ed;backdrop-filter:blur(16px);border-color:#193e431a;box-shadow:0 4px 20px #193e430d}.navegacion-desplazada .navegacion-simbolo .logo-symbol i{background:#2d7b73}.navegacion-desplazada .navegacion-cita:hover,.navegacion-desplazada .navegacion-menu:hover{background:#eaf0e9}
+.panel-navegacion{position:fixed;inset:0 0 0 auto;margin:0;width:min(480px,100%);height:100dvh;max-width:100%;max-height:100dvh;border:0;border-radius:0;padding:0;color:#193e43;background:#f8f8f2;box-shadow:-20px 0 90px #102e3730;pointer-events:auto;overflow-y:auto}
+.panel-navegacion::backdrop{background:#102b355c;backdrop-filter:blur(6px)}.panel-navegacion[open]{animation:abrir-panel .45s cubic-bezier(.2,.8,.2,1) both}
+.panel-navegacion-interior{min-height:100%;display:flex;flex-direction:column;padding:34px 40px 32px}
+.panel-navegacion-cabecera{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:55px}.panel-navegacion-cabecera>span{font-size:9px;letter-spacing:2px;color:#647875}.panel-navegacion-cabecera button{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid #193e4320;background:none;border-radius:50%}.panel-navegacion-cabecera button:hover{background:#e6ede4}
+.panel-navegacion nav{display:flex;flex-direction:column;align-items:stretch;position:static;gap:0;padding:0;border:0;background:none;width:auto;font-size:initial}
+.panel-navegacion nav>a{display:flex;align-items:center;gap:20px;padding:21px 0;border-bottom:1px solid #193e4320;font-family:Manrope,sans-serif;font-size:25px;font-weight:450;letter-spacing:-.7px;transition:color .2s,padding .2s}.panel-navegacion nav>a:after{display:none}.panel-navegacion nav>a>svg{margin-left:auto;flex-shrink:0}.panel-navegacion nav>a:hover{padding-left:8px;color:#26766e}.panel-numero{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:1px;color:#82918a}.panel-navegacion[open] nav>a{animation:aparecer-enlace .5s .1s both}
+.panel-navegacion-base{margin-top:auto;padding-top:50px}.panel-navegacion-base p{font-family:Manrope,sans-serif;font-size:24px;line-height:1.35;letter-spacing:-.6px;margin-bottom:25px}.panel-navegacion-base em{font-size:29px;font-style:italic}.panel-navegacion-base>.button{width:100%;justify-content:space-between}.panel-navegacion-base>span{display:block;font-size:7px;letter-spacing:1.5px;color:#72847c;margin-top:26px;line-height:1.7}
+@keyframes abrir-panel{from{transform:translateX(100%);opacity:.4}to{transform:translateX(0);opacity:1}}@keyframes aparecer-enlace{from{opacity:0;translate:18px 0}to{opacity:1;translate:0 0}}
+@media(max-width:560px){.navegacion-controles{padding:18px 5%;gap:10px}.navegacion-simbolo{width:43px;height:43px}.navegacion-simbolo .logo-symbol{grid-template-columns:repeat(2,9px);gap:2.5px}.navegacion-simbolo .logo-symbol i{width:9px;height:11px}.navegacion-derecha{gap:7px}.navegacion-cita,.navegacion-menu{padding:12px 13px;font-size:10px;min-height:43px;gap:10px}.navegacion-menu svg{width:18px}.panel-navegacion-interior{padding:24px 27px}.panel-navegacion-cabecera{margin-bottom:30px}.panel-navegacion nav>a{font-size:23px;padding:21px 0;gap:17px}.panel-navegacion-base{padding-top:38px}}
+@media(max-height:650px){.panel-navegacion-cabecera{margin-bottom:20px}.panel-navegacion nav>a{padding:15px 0;font-size:23px}.panel-navegacion-base{padding-top:25px}.panel-navegacion-base p{display:none}}
+@media(prefers-reduced-motion:reduce){.panel-navegacion[open],.panel-navegacion[open] nav>a{animation:none}.navegacion-flotante *{transition:none!important}}
+
+/* Símbolo de marca sin contenedor circular. */
+header.navegacion-flotante .navegacion-simbolo{border:0;border-radius:0;background:none;box-shadow:none;backdrop-filter:none}
+
+/* Acceso al menú únicamente con el icono de tres líneas. */
+header.navegacion-flotante .navegacion-menu{width:48px;height:48px;padding:10px;border:0;background:none;border-radius:0;box-shadow:none;backdrop-filter:none}
+header.navegacion-flotante .navegacion-menu svg{width:25px;height:25px}
+
+/* La marca flotante solo acompaña a la portada. */
+header.navegacion-flotante.navegacion-desplazada .navegacion-simbolo{visibility:hidden;opacity:0;pointer-events:none}
