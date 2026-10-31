@@ -50,7 +50,7 @@ export default function Portada() {
 
   return (
     <section ref={referencia} id="inicio" className="portada-cinematica" aria-labelledby="titulo-portada">
-      <div className="portada-fotografia" aria-hidden="true"><img src="/images/hero-medico.png" alt="" fetchPriority="high"/></div>
+      <div className="portada-fotografia" aria-hidden="true"><img src="/images/portada-equipo-medico.png" alt="" fetchPriority="high"/></div>
       <div className="portada-velo" aria-hidden="true"/>
       <div className="portada-identidad">
         <p className="portada-sobretitulo">ATENCIÓN ESPECIALIZADA, CERCA DE TI</p>
@@ -61,7 +61,6 @@ export default function Portada() {
       </div>
       <div className="portada-contenido">
         <div className="portada-mensaje">
-          <p className="portada-numero">CERCANÍA QUE SE SIENTE. CUIDADO QUE ACOMPAÑA.</p>
           <h2>Atención especializada<br/>para <em>tu salud.</em></h2>
           <p className="portada-descripcion">Gastroenterología, oncología y cirugía. Especialidades que se complementan para acompañarte con una atención profesional, cercana y personalizada.</p>
           <div className="portada-acciones"><a className="portada-cita" href="#contacto">Agendar una cita <ArrowUpRight size={18}/></a></div>
@@ -72,7 +71,6 @@ export default function Portada() {
             const Icono = iconosEspecialidades[indice % iconosEspecialidades.length];
             return <a key={especialidad.name} className="portada-servicio" href="#especialidades" style={{animationDelay:`${1000 + indice * 100}ms`}} onClick={evento => {evento.preventDefault(); desplazarAEspecialidad(indice, especialidades.length);}}><Icono size={22} strokeWidth={1.3}/><span>{especialidad.name}</span><ArrowUpRight size={18}/></a>;
           })}
-          <p className="portada-servicios-nota">Conoce cómo podemos acompañarte.</p>
         </div>
       </div>
     </section>

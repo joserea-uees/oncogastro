@@ -27,3 +27,5 @@ header.navegacion-flotante .navegacion-menu svg{width:25px;height:25px}
 
 /* La marca flotante solo acompaña a la portada. */
 header.navegacion-flotante.navegacion-desplazada .navegacion-simbolo{visibility:hidden;opacity:0;pointer-events:none}
+
+.navegacion-controles{justify-content:flex-end}

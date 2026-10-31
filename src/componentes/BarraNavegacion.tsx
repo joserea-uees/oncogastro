@@ -46,7 +46,6 @@ export default function BarraNavegacion() {
   return (
     <header className={`navegacion-flotante${desplazado ? ' navegacion-desplazada' : ''}`}>
       <div className="navegacion-controles">
-        <a className="navegacion-simbolo" href="#inicio" aria-hidden={desplazado} tabIndex={desplazado ? -1 : 0} aria-label="ONCOGASTRO, volver al inicio"><span className="logo-symbol" aria-hidden="true"><i/><i/><i/><i/></span></a>
         <div className="navegacion-derecha">
           <button className="navegacion-menu" aria-label="Abrir menú" aria-haspopup="dialog" aria-expanded={abierto} aria-controls="panel-navegacion" onClick={() => establecerAbierto(true)}><Menu size={25}/></button>
         </div>

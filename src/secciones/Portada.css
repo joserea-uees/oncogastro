@@ -23,3 +23,13 @@
 @media(max-height:650px) and (min-width:561px){.portada-cinematica{min-height:440px}.portada-identidad{padding-top:75px}.portada-nombre{font-size:min(10vw,15svh)}.portada-sobretitulo{font-size:7px;margin-bottom:5px}.portada-firma{margin-top:8px;font-size:5px}.portada-contenido{padding-top:14px;padding-bottom:20px}.portada-numero{font-size:6px;margin-bottom:8px}.portada-mensaje h2{font-size:24px;margin-bottom:10px}.portada-descripcion{font-size:10px;line-height:1.6;margin-bottom:12px}.portada-cita{font-size:10px;padding:10px 16px}.portada-servicios{padding:12px 18px}.portada-servicio{padding:8px 0}.portada-servicio>span{font-size:12px}.portada-servicios-nota{font-size:8px;margin-top:8px}}
 @media(max-height:700px) and (max-width:560px){.portada-numero{display:none}.portada-contenido{gap:12px;padding-top:12px;padding-bottom:20px}.portada-mensaje h2{font-size:23px}.portada-servicios{padding:12px 18px}.portada-servicio{padding:8px 0}.portada-servicios-nota{font-size:8px;margin-top:8px}}
 @media(prefers-reduced-motion:reduce){.portada-cinematica *, .portada-cinematica *:before{animation:none!important;transition:none!important}.portada-letra,.portada-sobretitulo,.portada-firma,.portada-contenido,.portada-servicio{opacity:1;transform:none}.portada-identidad,.portada-fotografia img{transform:none}}
+/* Fotografía ilustrativa de equipo: encuadre panorámico en escritorio. */
+.portada-fotografia img{width:100%;object-position:60% 40%}
+@media(max-width:800px){.portada-fotografia img{object-position:67% 40%}}
+@media(max-width:560px){.portada-fotografia{background:#304c50}.portada-fotografia img{height:65%;object-position:68% 40%}.portada-velo{background:linear-gradient(0deg,#122c33fa 0%,#19383ef2 30%,#19383e78 58%,#18313935 100%)}}
+/* Tipografía de portada coherente con el nombre de la marca. */
+.portada-mensaje{font-family:Manrope,sans-serif}
+.portada-mensaje h2{font-weight:500;letter-spacing:-.045em;line-height:1.16}
+.portada-mensaje h2 em{font-family:inherit;font-style:normal;font-weight:600;letter-spacing:inherit;color:#e4ead8}
+.portada-descripcion{font-family:inherit;font-weight:400;letter-spacing:-.015em;line-height:1.8}
+.portada-cita{font-family:inherit;font-weight:600;letter-spacing:0}
