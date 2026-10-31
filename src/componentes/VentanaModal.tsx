@@ -1,0 +1,3 @@
+import {useEffect,useRef} from 'react';
+import {X} from 'lucide-react';
+export default function VentanaModal({titulo,children,alCerrar}:{titulo:string;children:React.ReactNode;alCerrar:()=>void}){const ref=useRef<HTMLDialogElement>(null);useEffect(()=>{const d=ref.current!;d.showModal();document.body.style.overflow='hidden';return()=>{document.body.style.overflow='';};},[]);return <dialog ref={ref} onCancel={alCerrar} onClick={e=>{if(e.target===ref.current)alCerrar()}}><div className="modal-inner"><button autoFocus className="close-button" onClick={alCerrar} aria-label="Cerrar"><X/></button><p className="eyebrow">ONCOGASTRO</p><h2>{titulo}</h2>{children}</div></dialog>}

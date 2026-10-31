@@ -1,1 +1,0 @@
-export default function Logo(){return <a className="logo" href="#inicio" aria-label="ONCOGASTRO, inicio"><span className="logo-symbol" aria-hidden="true"><i/><i/><i/><i/></span><span>ONCOGASTRO<small>MEDICINA CON CALIDAD HUMANA</small></span></a>}
