@@ -1,0 +1,3 @@
+import {MessageCircle} from 'lucide-react';
+import {whatsappUrl} from '../data/contact';
+export default function WhatsAppButton({floating=false,onUnavailable}:{floating?:boolean;onUnavailable:()=>void}){const content=<><MessageCircle size={20}/>{!floating&&'Consultar por WhatsApp'}</>;return whatsappUrl?<a className={floating?'whatsapp-float':'button whatsapp'} href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Consultar por WhatsApp">{content}</a>:<button className={floating?'whatsapp-float':'button whatsapp'} onClick={onUnavailable} aria-label="Consultar por WhatsApp">{content}</button>}

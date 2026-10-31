@@ -1,0 +1,3 @@
+import {useEffect,useRef} from 'react';
+import {X} from 'lucide-react';
+export default function Modal({title,children,onClose}:{title:string;children:React.ReactNode;onClose:()=>void}){const ref=useRef<HTMLDialogElement>(null);useEffect(()=>{const d=ref.current!;d.showModal();document.body.style.overflow='hidden';return()=>{document.body.style.overflow='';};},[]);return <dialog ref={ref} onCancel={onClose} onClick={e=>{if(e.target===ref.current)onClose()}}><div className="modal-inner"><button autoFocus className="close-button" onClick={onClose} aria-label="Cerrar"><X/></button><p className="eyebrow">ONCOGASTRO</p><h2>{title}</h2>{children}</div></dialog>}
